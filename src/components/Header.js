@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
     return (
         <header>
-            <h1 className="gradients">Vinyl Collection Management</h1>
+            <h1 className="gradients">My Vinyls</h1>
 
             <div className="links">
                 
