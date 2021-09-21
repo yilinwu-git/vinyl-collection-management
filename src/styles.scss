@@ -34,8 +34,8 @@ header {
 		align-items: center;
 		margin-top: 30px;
 		color: #515151;
-		-webkit-animation: tracking-in-expand-fwd-top 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-		animation: tracking-in-expand-fwd-top 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+		-webkit-animation: tracking-in-expand-fwd-top 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+		animation: tracking-in-expand-fwd-top 1.2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 
 		@media (max-width: 700px) {
 			font-size: 30px;
@@ -98,6 +98,67 @@ header {
 	}
 }
 
+/* Vinyl CSS Image */
+.vinyl-wrapper {
+	position: relative;
+	display: block;
+	width: 100px;
+	height: 100px;
+	transform: rotateX(10deg) rotateZ(-15deg);
+	margin-top: 20px;
+	margin-left: 15px;
+	opacity: 0;
+	animation: fadeInFromNone 1.5s ease-out 1.5s 1 forwards;
+
+	@media (max-width: 765px) {
+		display: none;
+	}
+}
+
+.record-sleeve {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	background: radial-gradient(circle at center, transparent 27%, #dadada 10%);
+	border-radius: 2px;
+	box-shadow: -3px 5px 10px -1px;
+	z-index: 10;
+}
+
+.vinyl {
+	position: absolute;
+	transform: translate(34px);
+	top: 35px;
+	background: #f7aac7;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: solid #e7568d;
+	border-width: 14px 0px;
+	border-left: 0;
+	animation: pull-out 1.3s 1.5s ease-out forwards, spin 1.3s 3s linear infinite;
+	box-shadow: 0px 0px 1px #f7aac7, 0px 0px 0px 5px #ea6a9b, 0px 0px 7px #f7aac7, 0px 0px 0px 8px #000,
+		0px 0px 0px 13px #252424, 0px 0px 0px 9px #000, 0px 0px 0px 9px #313030, 0px 0px 0px 10px #000,
+		0px 0px 0px 10px #3a3838, 0px 0px 0px 11px #000, 0px 0px 0px 12px #2b2a2a, 0px 0px 0px 12px #000,
+		0px 0px 0px 12px #313030, 0px 0px 0px 13px #000, 0px 0px 0px 13px #313030, 0px 0px 0px 14px #000,
+		0px 0px 0px 14px #333333, 0px 0px 0px 15px #000, 0px 0px 0px 15px #333232, 0px 0px 0px 16px #000,
+		0px 0px 0px 16px #4c4a4a, 0px 0px 0px 17px #000, 0px 0px 0px 17px #2f2e2e, 0px 0px 0px 18px #000,
+		0px 0px 0px 18px #252424, 0px 0px 0px 19px #000, 0px 0px 0px 19px #2f2e2e, 0px 0px 0px 20px #000,
+		0px 0px 0px 20px #2f2e2e, 0px 0px 0px 21px #000, 0px 0px 0px 27px #2f2e2e, 0px 0px 0px 27px #000,
+		0px 0px 0px 27px #2f2e2e, 0px 0px 0px 28px #cecece, 0px 0px 0px 29px #2f2e2e;
+
+	&:before {
+		content: "";
+		position: absolute;
+		width: 6px;
+		height: 6px;
+		background: white;
+		top: calc(50% - 3px);
+		left: calc(50% - 3px);
+		border-radius: 50%;
+	}
+}
+
 /* content */
 .main-content {
 	width: 80%;
@@ -112,7 +173,7 @@ header {
 	align-items: center;
 }
 
-/* vinyl */
+/* vinyl card-detail */
 .record {
 	margin: 15px;
 	width: 288px;
@@ -283,71 +344,63 @@ button {
 	padding: 10px;
 }
 
-/* Vinyl CSS Image */
-.vinyl-wrapper {
-	position: relative;
-	display: block;
-	width: 100px;
-	height: 100px;
-	transform: rotateX(10deg) rotateZ(-15deg);
-	margin-top: 20px;
-	margin-left: 15px;
-
-	@media (max-width: 765px) {
-		display: none;
-	}
-}
-
-.record-sleeve {
-	width: 100px;
-	height: 100px;
-	position: absolute;
-	background: radial-gradient(circle at center, transparent 27%, #dadada 10%);
-	border-radius: 2px;
-	box-shadow: -3px 5px 10px -1px;
-	z-index: 10;
-}
-
-.vinyl {
-	position: absolute;
-	-ms-transform: translate(34px);
-	transform: translate(34px);
-	top: 35px;
-	background: #f7aac7;
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	border: solid #e7568d;
-	border-width: 14px 0px;
-	border-left: 0;
-	animation: pull-out 1.3s 1.5s ease-out forwards, spin 1.3s 4s linear infinite;
-	box-shadow: 0px 0px 1px #f7aac7, 0px 0px 0px 5px #ea6a9b, 0px 0px 7px #f7aac7, 0px 0px 0px 8px #000,
-		0px 0px 0px 13px #252424, 0px 0px 0px 9px #000, 0px 0px 0px 9px #313030, 0px 0px 0px 10px #000,
-		0px 0px 0px 10px #3a3838, 0px 0px 0px 11px #000, 0px 0px 0px 12px #2b2a2a, 0px 0px 0px 12px #000,
-		0px 0px 0px 12px #313030, 0px 0px 0px 13px #000, 0px 0px 0px 13px #313030, 0px 0px 0px 14px #000,
-		0px 0px 0px 14px #333333, 0px 0px 0px 15px #000, 0px 0px 0px 15px #333232, 0px 0px 0px 16px #000,
-		0px 0px 0px 16px #4c4a4a, 0px 0px 0px 17px #000, 0px 0px 0px 17px #2f2e2e, 0px 0px 0px 18px #000,
-		0px 0px 0px 18px #252424, 0px 0px 0px 19px #000, 0px 0px 0px 19px #2f2e2e, 0px 0px 0px 20px #000,
-		0px 0px 0px 20px #2f2e2e, 0px 0px 0px 21px #000, 0px 0px 0px 27px #2f2e2e, 0px 0px 0px 27px #000,
-		0px 0px 0px 27px #2f2e2e, 0px 0px 0px 28px #cecece, 0px 0px 0px 29px #2f2e2e;
-
-	&:before {
-		content: "";
-		position: absolute;
-		width: 6px;
-		height: 6px;
-		background: white;
-		top: calc(50% - 3px);
-		left: calc(50% - 3px);
-		border-radius: 50%;
-	}
-}
-
 // ANIMATION //
+/* fade In From None */
+@-webkit-keyframes fadeInFromNone {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+
+	1% {
+		display: none;
+		opacity: 0;
+	}
+
+	100% {
+		display: block;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInFromNone {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+
+	1% {
+		display: none;
+		opacity: 0;
+	}
+
+	100% {
+		display: block;
+		opacity: 1;
+	}
+}
 
 /* blinking */
 .blinking {
 	animation: blinkingText 1.5s infinite;
+}
+
+@-webkit-keyframes blinkingText {
+	0% {
+		color: #7e1a24;
+	}
+	50% {
+		color: #7e1a24;
+	}
+	60% {
+		color: transparent;
+	}
+	99% {
+		color: transparent;
+	}
+	100% {
+		color: #7e1a24;
+	}
 }
 
 @keyframes blinkingText {
@@ -412,7 +465,7 @@ button {
 	}
 }
 
-/*pull-out*/
+/* pull-out */
 @-webkit-keyframes pull-out {
 	0% {
 		transform: translateX(34px);
@@ -431,7 +484,7 @@ button {
 	}
 }
 
-/*tracking-in-expand-fwd-top*/
+/* tracking-in-expand-fwd-top */
 @-webkit-keyframes tracking-in-expand-fwd-top {
 	0% {
 		letter-spacing: -0.5em;
@@ -465,9 +518,9 @@ button {
 	}
 }
 
-/*.slide-in-right*/
+/* slide-in-right */
 .slide-in-right {
-	animation: slide-in-right 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-in-right 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @-webkit-keyframes slide-in-right {
@@ -491,9 +544,9 @@ button {
 	}
 }
 
-/*slide-in-left*/
+/* slide-in-left */
 .slide-in-left {
-	animation: slide-in-left 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-in-left 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @-webkit-keyframes slide-in-left {
@@ -517,9 +570,9 @@ button {
 	}
 }
 
-/*slide-in-bottom*/
+/* slide-in-bottom */
 .slide-in-bottom {
-	animation: slide-in-bottom 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-in-bottom 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @-webkit-keyframes slide-in-bottom {

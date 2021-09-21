@@ -16,8 +16,6 @@ const EditVinyl = ({history}) => {
         history.push('/');
       };
     
-
-
     return (
         <div>
             <VinylForm vinyl={vinylToEdit} handleOnSubmit={handleOnSubmit} />

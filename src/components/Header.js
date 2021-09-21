@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
@@ -16,9 +15,9 @@ const Header = () => {
                         Add Vinyl
                     </NavLink>
 
-                <div class="vinyl-wrapper">
-                    <div class="vinyl"></div>
-                    <div class="record-sleeve"></div> 
+                <div className="vinyl-wrapper">
+                    <div className="vinyl"></div>
+                    <div className="record-sleeve"></div> 
                 </div>
 
             </div>

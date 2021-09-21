@@ -25,8 +25,6 @@ const VinylForm = (props) => {
         const values = [albumName, artist, released, country, label, genre];
         let isAllFilled = true;
 
-        //console.log(values);
- 
         values.forEach((value)=> {
             if(value === '' || value === '0'){
                 isAllFilled = false;
@@ -34,21 +32,32 @@ const VinylForm = (props) => {
         });
 
         if (isAllFilled) {
-            const vinylToSubmit = {
-                id: uuidv4(),
-                albumName, 
-                artist, 
-                released, 
-                country,
-                label,             
-                genre,
-            };
-            // submit vinyl to localstoreage
-            props.handleOnSubmit(vinylToSubmit);
-            setErrorMsg("");
+            
+            const regExp = new RegExp(/^(19|20)\d{2}$/);
+            
+            if (regExp.test(released)) {                
+                
+                const vinylToSubmit = {
+                    id: uuidv4(),
+                    albumName, 
+                    artist, 
+                    released, 
+                    country,
+                    label,             
+                    genre,
+                };
+                // submit vinyl to localstoreage
+                props.handleOnSubmit(vinylToSubmit);
+                setErrorMsg("");
+
+            }  else {
+                setErrorMsg("Please Enter A Valid Year");
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
         }
         else {
             setErrorMsg("Please fill all the fields");
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
     }
 
@@ -81,7 +90,7 @@ const VinylForm = (props) => {
                 </Form.Group>
 
                 <Form.Group controlId="artist">
-                    <Form.Label>Artist</Form.Label>
+                    <Form.Label>Artist(s)</Form.Label>
                     <Form.Control
                         className="input-control"
                         type="text"
@@ -99,7 +108,7 @@ const VinylForm = (props) => {
                         type="text"
                         name="released"
                         value={released}
-                        placeholder="Enter Release Year"
+                        placeholder="Enter Release Year e.g.,2020 "
                         onChange={handleInputChange}
                     />
                 </Form.Group>
