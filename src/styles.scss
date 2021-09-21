@@ -108,7 +108,7 @@ header {
 	margin-top: 20px;
 	margin-left: 15px;
 	opacity: 0;
-	animation: fadeInFromNone 1.5s ease-out 1.5s 1 forwards;
+	animation: fadeInFromNone 1.5s ease-out 1.1s 1 forwards;
 
 	@media (max-width: 765px) {
 		display: none;
@@ -136,7 +136,7 @@ header {
 	border: solid #e7568d;
 	border-width: 14px 0px;
 	border-left: 0;
-	animation: pull-out 1.3s 1.5s ease-out forwards, spin 1.3s 3s linear infinite;
+	animation: pull-out 1.3s ease-out 1.7s forwards, spin 1.3s linear 3s infinite;
 	box-shadow: 0px 0px 1px #f7aac7, 0px 0px 0px 5px #ea6a9b, 0px 0px 7px #f7aac7, 0px 0px 0px 8px #000,
 		0px 0px 0px 13px #252424, 0px 0px 0px 9px #000, 0px 0px 0px 9px #313030, 0px 0px 0px 10px #000,
 		0px 0px 0px 10px #3a3838, 0px 0px 0px 11px #000, 0px 0px 0px 12px #2b2a2a, 0px 0px 0px 12px #000,
@@ -357,6 +357,11 @@ button {
 		opacity: 0;
 	}
 
+	10% {
+		display: none;
+		opacity: 0;
+	}
+
 	100% {
 		display: block;
 		opacity: 1;
@@ -370,6 +375,11 @@ button {
 	}
 
 	1% {
+		display: none;
+		opacity: 0;
+	}
+
+	10% {
 		display: none;
 		opacity: 0;
 	}
